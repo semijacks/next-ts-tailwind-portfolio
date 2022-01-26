@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { getAllPosts, PostMeta } from 'utils/api';
+import Articles from '@/components/Articles';
 
-export default function Home() {
+export default function Home({ posts }: { posts: PostMeta[] }) {
   return (
     <div>
       <Head>
@@ -17,7 +19,7 @@ export default function Home() {
           </h2>
           <p className='text-gray-600 dark:text-gray-400 mb-16'>
             Building scalable full stack web and mobile applications using
-            modern technology tools
+            scalable and robust tools
           </p>
         </div>
         <div className='w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto'>
@@ -30,6 +32,15 @@ export default function Home() {
           />
         </div>
       </div>
+      <Articles posts={posts} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const posts = getAllPosts()
+    .slice(0, 9)
+    .map((post) => post.meta);
+
+  return { props: { posts } };
 }
