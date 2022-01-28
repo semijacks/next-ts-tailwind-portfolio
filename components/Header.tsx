@@ -4,7 +4,12 @@ import { useTheme } from 'next-themes';
 import NavItem from '@/components/NavItem';
 
 interface HeaderProps {
-  navItems: string[];
+  navItems: navItemsData[];
+}
+
+interface navItemsData {
+  text: string;
+  route: string;
 }
 
 const Header = ({ navItems }: HeaderProps) => {
@@ -19,8 +24,11 @@ const Header = ({ navItems }: HeaderProps) => {
       <nav className='py-4 flex justify-between items-center max-w-2xl w-full mb-4 mx-auto'>
         <div className='ml-[-0.60rem]'>
           {navItems.map((item) => (
-            <NavItem key={item} href='/' text={item} />
-            // TODO: make route dynamic later
+            <NavItem
+              key={item.route}
+              href={`/${item.route}`}
+              text={item.text}
+            />
           ))}
         </div>
         <div className=''>
