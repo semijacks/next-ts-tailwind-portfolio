@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import NextLink from 'next/link';
 import { useTheme } from 'next-themes';
+import NavItem from '@/components/NavItem';
 
-interface HeaderProps {}
+interface HeaderProps {
+  navItems: string[];
+}
 
-const Header = ({}: HeaderProps) => {
+const Header = ({ navItems }: HeaderProps) => {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -13,8 +16,14 @@ const Header = ({}: HeaderProps) => {
   return (
     <>
       <div className='w-full h-4 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500' />
-      <nav className='py-4 flex justify-between items-center max-w-2xl w-full mb-4 mx-auto bg-white dark:bg-gray-900'>
-        <div className='flex justify-between items-center'>
+      <nav className='py-4 flex justify-between items-center max-w-2xl w-full mb-4 mx-auto'>
+        <div className='ml-[-0.60rem]'>
+          {navItems.map((item) => (
+            <NavItem key={item} href='/' text={item} />
+            // TODO: make route dynamic later
+          ))}
+        </div>
+        <div className=''>
           <button
             aria-label='Toggle Dark Mode'
             type='button'
@@ -49,20 +58,6 @@ const Header = ({}: HeaderProps) => {
               </svg>
             )}
           </button>
-        </div>
-        <div>
-          <NextLink href=''>
-            <a className='p-1 sm:p-4 text-xs md:text-lg '>Dashboard</a>
-          </NextLink>
-          <NextLink href=''>
-            <a className='p-1 sm:p-4 text-xs md:text-lg '>Blog</a>
-          </NextLink>
-          <NextLink href=''>
-            <a className='p-1 sm:p-4 text-xs md:text-lg '>About</a>
-          </NextLink>
-          <NextLink href='/'>
-            <a className='p-1 sm:p-4 text-xs md:text-lg '>Home</a>
-          </NextLink>
         </div>
       </nav>
     </>

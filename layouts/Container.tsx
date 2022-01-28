@@ -7,10 +7,10 @@ interface ContainerProps {
 
 const Container = ({ children }: ContainerProps) => {
   return (
-    <>
-      <Header />
+    <div className='bg-gray-50 dark:bg-gray-900'>
+      <Header navItems={['Home', 'About', 'Blog']} />
       <div className='max-w-2xl mx-auto'>{children}</div>
-    </>
+    </div>
   );
 };
 

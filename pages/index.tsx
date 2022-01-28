@@ -1,5 +1,6 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
+import Image from 'next/Image';
 import { getAllPosts, PostMeta } from 'utils/api';
 import Articles from '@/components/Articles';
 
@@ -32,15 +33,18 @@ export default function Home({ posts }: { posts: PostMeta[] }) {
           />
         </div>
       </div>
+      <h3 className='font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white'>
+        Recent Blog Posts
+      </h3>
       <Articles posts={posts} />
     </div>
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = () => {
   const posts = getAllPosts()
     .slice(0, 9)
     .map((post) => post.meta);
 
   return { props: { posts } };
-}
+};

@@ -99,7 +99,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    [require('@tailwindcss/typography')],
+    require('@tailwindcss/typography')({
+      modifiers: [],
+    }),
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.text-gradient': {

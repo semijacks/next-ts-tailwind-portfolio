@@ -10,12 +10,18 @@
   "dependencies": {
     "@next/mdx": "^9.1.1",
     "@tailwindcss/typography": "^0.5.0",
+    "classnames": "^2.3.1",
     "glob": "^7.2.0",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.4.0",
     "next": "12.0.8",
+    "next-mdx-remote": "^3.0.8",
     "next-themes": "^0.0.15",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-highlight": "^5.0.2",
+    "rehype-slug": "^5.0.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.38",

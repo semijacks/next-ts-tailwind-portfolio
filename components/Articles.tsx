@@ -7,11 +7,13 @@ export default function Articles({ posts }: { posts: PostMeta[] }) {
       {posts.map((post) => (
         <li className='mb-10' key={post.slug}>
           <div>
-            <h1 className='text-2xl font-semibold mb-3'>
+            <h4 className='text-lg md:text-lg font-medium mb-3 sm:mb-3 w-full text-gray-900 dark:text-gray-100 tracking-tight'>
               <Link href={`/posts/${post.slug}`}>{post.title}</Link>
-            </h1>
+            </h4>
           </div>
-          <p className='mb-2'>{post.excerpt}</p>
+          <p className='mb-2 text-gray-700 dark:text-gray-200'>
+            {post.excerpt}
+          </p>
           <p className='flex gap-x-5'>
             {post.tags.map((tag) => (
               <div
