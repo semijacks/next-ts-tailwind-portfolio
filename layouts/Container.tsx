@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '@/components/Header';
-import { navItemsData } from '../utils/data';
+import { navItemsData } from '@utils/data';
 
 interface ContainerProps {
   children: React.ReactNode;

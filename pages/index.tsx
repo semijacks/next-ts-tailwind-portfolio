@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/Image';
-import { getAllPosts, PostMeta } from 'utils/api';
+import { getAllPosts, PostMeta } from '@utils/api';
 import Articles from '@/components/Articles';
 
 export default function Home({ posts }: { posts: PostMeta[] }) {

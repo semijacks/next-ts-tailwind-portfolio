@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { PostMeta } from 'utils/api';
+import type { PostMeta } from '@utils/api';
 
 export default function Articles({ posts }: { posts: PostMeta[] }) {
   return (
