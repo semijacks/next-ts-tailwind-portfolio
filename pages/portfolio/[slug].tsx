@@ -15,18 +15,18 @@ interface MDXPost {
   meta: PostMeta;
 }
 
-export default function PostPage({ post }: { post: MDXPost }) {
+export default function PortfolioPage({ project }: { project: MDXPost }) {
   return (
     <>
       <Head>
-        <title>{`Blog - ${post.meta.title}`}</title>
+        <title>{`Blog - ${project.meta.title}`}</title>
       </Head>
       <div className='px-5 md:px-0'>
         <h1 className='mb-10 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white'>
-          {post.meta.title}
+          {project.meta.title}
         </h1>
         <article className='prose dark:prose-dark mb-20'>
-          <MDXRemote {...post.source} components={{ YouTube, Image }} />
+          <MDXRemote {...project.source} components={{ YouTube, Image }} />
         </article>
       </div>
     </>
@@ -35,7 +35,7 @@ export default function PostPage({ post }: { post: MDXPost }) {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as { slug: string };
-  const { content, meta } = getMdxFromSlug(slug, 'posts');
+  const { content, meta } = getMdxFromSlug(slug, 'portfolio');
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      post: {
+      project: {
         source: mdxSource,
         meta,
       },
@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getSlugs('posts').map((slug) => ({ params: { slug } }));
+  const paths = getSlugs('portfolio').map((slug) => ({ params: { slug } }));
 
   return {
     paths,

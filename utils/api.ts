@@ -3,9 +3,15 @@ import fs from 'fs';
 import { sync } from 'glob';
 import matter from 'gray-matter';
 
-const POSTS_PATH = path.join(process.cwd(), 'posts');
+// const POSTS_PATH = path.join(process.cwd(), 'posts');
 
-export const getSlugs = (): string[] => {
+const getMdxPath = (type: string): string => {
+  const POSTS_PATH = path.join(process.cwd(), `${type}`);
+  return POSTS_PATH;
+};
+
+export const getSlugs = (type: string): string[] => {
+  const POSTS_PATH = getMdxPath(type);
   const paths = sync(`${POSTS_PATH}/*.mdx`);
 
   return paths.map((path) => {
@@ -16,9 +22,9 @@ export const getSlugs = (): string[] => {
   });
 };
 
-export const getAllPosts = () => {
-  const posts = getSlugs()
-    .map((slug) => getPostFromSlug(slug))
+export const getAllMdxFiles = (type: string) => {
+  const posts = getSlugs(type)
+    .map((slug) => getMdxFromSlug(slug, type))
     .sort((a, b) => {
       if (a.meta.date > b.meta.date) return 1;
       if (a.meta.date < b.meta.date) return -1;
@@ -41,7 +47,8 @@ export interface PostMeta {
   date: string;
 }
 
-export const getPostFromSlug = (slug: string): Post => {
+export const getMdxFromSlug = (slug: string, type: string): Post => {
+  const POSTS_PATH = getMdxPath(type);
   const postPath = path.join(POSTS_PATH, `${slug}.mdx`);
   const source = fs.readFileSync(postPath);
   const { content, data } = matter(source);
