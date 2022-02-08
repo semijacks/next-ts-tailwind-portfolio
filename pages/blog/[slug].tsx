@@ -35,7 +35,7 @@ export default function PostPage({ post }: { post: MDXPost }) {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as { slug: string };
-  const { content, meta } = getMdxFromSlug(slug, 'posts');
+  const { content, meta } = getMdxFromSlug(slug, 'blog');
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getSlugs('posts').map((slug) => ({ params: { slug } }));
+  const paths = getSlugs('blog').map((slug) => ({ params: { slug } }));
 
   return {
     paths,

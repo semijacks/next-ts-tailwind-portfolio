@@ -6,7 +6,7 @@ import matter from 'gray-matter';
 // const POSTS_PATH = path.join(process.cwd(), 'posts');
 
 const getMdxPath = (type: string): string => {
-  const POSTS_PATH = path.join(process.cwd(), `${type}`);
+  const POSTS_PATH = path.join(process.cwd(), `mdx/${type}`);
   return POSTS_PATH;
 };
 

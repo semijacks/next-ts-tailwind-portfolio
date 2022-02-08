@@ -10,7 +10,7 @@ export default function Portfolio({ projects }: { projects: PostMeta[] }) {
         <title>Portfolio</title>
       </Head>
       <>
-        <Articles mdxFiles={projects} type='portfolio' />
+        <Articles mdxFiles={projects} type='portfolio' withTags={true} />
       </>
     </div>
   );

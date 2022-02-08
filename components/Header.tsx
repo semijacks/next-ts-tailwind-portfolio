@@ -16,8 +16,7 @@ const Header = ({ navItems }: HeaderProps) => {
 
   return (
     <>
-      <div className='w-full h-4 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500' />
-      <nav className='py-4 flex justify-between items-center max-w-2xl w-full mb-4 mx-auto px-5 md:px-0'>
+      <nav className='py-4 flex justify-between items-center max-w-2xl w-full mb-4 mx-auto'>
         <div className='ml-[-0.60rem]'>
           {navItems.map((item) => (
             <NavItem

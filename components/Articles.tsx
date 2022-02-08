@@ -1,36 +1,46 @@
-import Link from 'next/link';
 import type { PostMeta } from '@utils/api';
-
-export default function Articles({
-  mdxFiles,
-  type,
-}: {
+import ContentCard from './Card';
+interface ArticlesProps {
   mdxFiles: PostMeta[];
   type: string;
-}) {
-  return (
+  withTags: boolean;
+}
+
+export default function Articles({ mdxFiles, type, withTags }: ArticlesProps) {
+  return withTags ? (
     <ul>
       {mdxFiles.map((mdxFile) => (
-        <li className='mb-10' key={mdxFile.slug}>
-          <div>
-            <h4 className='text-lg md:text-lg font-medium mb-3 sm:mb-3 w-full text-gray-900 dark:text-gray-100 tracking-tight'>
-              <Link href={`/${type}/${mdxFile.slug}`}>{mdxFile.title}</Link>
-            </h4>
-          </div>
-          <p className='mb-2 text-gray-700 dark:text-gray-200'>
-            {mdxFile.excerpt}
-          </p>
-          <p className='flex gap-x-5'>
-            {mdxFile.tags.map((tag) => (
-              <div
-                key={tag}
-                className='text-xs bg-gradient-to-r from-yellow-500 to-pink-500 rounded px-2 py-1'
-              >
-                <Link href={`/tags/${tag}`}>{tag}</Link>
-              </div>
-            ))}
-          </p>
-        </li>
+        <div
+          className='mb-10 border-4 rounded-xl p-5 border-gray-200'
+          key={mdxFile.slug}
+        >
+          <ContentCard
+            excerpt={mdxFile.excerpt}
+            slug={mdxFile.slug}
+            tags={mdxFile.tags}
+            title={mdxFile.title}
+            withTags={withTags}
+            type={type}
+          />
+        </div>
+      ))}
+    </ul>
+  ) : (
+    <ul>
+      {mdxFiles.map((mdxFile) => (
+        <div
+          className='mb-10 border-4 rounded-xl p-5 border-gray-200'
+          key={mdxFile.slug}
+        >
+          <ContentCard
+            excerpt={mdxFile.excerpt}
+            slug={mdxFile.slug}
+            tags={mdxFile.tags}
+            title={mdxFile.title}
+            withTags={withTags}
+            type={type}
+          />
+        </div>
       ))}
     </ul>
   );

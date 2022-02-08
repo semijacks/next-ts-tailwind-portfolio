@@ -10,14 +10,14 @@ export default function Blog({ posts }: { posts: PostMeta[] }) {
         <title>Blog</title>
       </Head>
       <>
-        <Articles mdxFiles={posts} type='posts' />
+        <Articles mdxFiles={posts} type='blog' withTags={true} />
       </>
     </div>
   );
 }
 
 export const getStaticProps: GetStaticProps = () => {
-  const posts = getAllMdxFiles('posts').map((post) => post.meta);
+  const posts = getAllMdxFiles('blog').map((post) => post.meta);
 
   return { props: { posts } };
 };
