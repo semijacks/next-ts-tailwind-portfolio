@@ -2,14 +2,10 @@ import { useState, useEffect } from 'react';
 import NextLink from 'next/link';
 import { useTheme } from 'next-themes';
 import NavItem from '@/components/NavItem';
+import { NavItemData } from '../utils/data';
 
 interface HeaderProps {
-  navItems: navItemsData[];
-}
-
-interface navItemsData {
-  text: string;
-  route: string;
+  navItems: NavItemData[];
 }
 
 const Header = ({ navItems }: HeaderProps) => {
@@ -21,7 +17,7 @@ const Header = ({ navItems }: HeaderProps) => {
   return (
     <>
       <div className='w-full h-4 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500' />
-      <nav className='py-4 flex justify-between items-center max-w-2xl w-full mb-4 mx-auto'>
+      <nav className='py-4 flex justify-between items-center max-w-2xl w-full mb-4 mx-auto px-5 md:px-0'>
         <div className='ml-[-0.60rem]'>
           {navItems.map((item) => (
             <NavItem

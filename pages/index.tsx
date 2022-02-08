@@ -6,7 +6,7 @@ import Articles from '@/components/Articles';
 
 export default function Home({ posts }: { posts: PostMeta[] }) {
   return (
-    <div>
+    <div className='px-5 md:px-0'>
       <Head>
         <title>Idowu Semilore</title>
       </Head>
