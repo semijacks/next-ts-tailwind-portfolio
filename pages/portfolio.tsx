@@ -5,7 +5,7 @@ import Articles from '@/components/Articles';
 
 export default function Portfolio({ projects }: { projects: PostMeta[] }) {
   return (
-    <div className=''>
+    <div className='px-5 md:px-0'>
       <Head>
         <title>Portfolio</title>
       </Head>

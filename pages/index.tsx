@@ -11,7 +11,7 @@ interface HomeProps {
 
 export default function Home({ posts, projects }: HomeProps) {
   return (
-    <div className=''>
+    <div className='px-5 md:px-0'>
       <Head>
         <title>Idowu Semilore</title>
       </Head>
