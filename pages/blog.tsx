@@ -5,7 +5,7 @@ import Articles from '@/components/Articles';
 
 export default function Blog({ posts }: { posts: PostMeta[] }) {
   return (
-    <div className='px-5 md:px-0'>
+    <div className=''>
       <Head>
         <title>Blog</title>
       </Head>

@@ -21,7 +21,7 @@ export default function PostPage({ post }: { post: MDXPost }) {
       <Head>
         <title>{`Blog - ${post.meta.title}`}</title>
       </Head>
-      <div className='px-5 md:px-0'>
+      <div className=''>
         <h1 className='mb-10 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white'>
           {post.meta.title}
         </h1>
