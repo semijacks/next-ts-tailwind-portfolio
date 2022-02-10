@@ -9,7 +9,7 @@ interface ContainerProps {
 const Container = ({ children }: ContainerProps) => {
   return (
     <div className='bg-gray-50 dark:bg-gray-900'>
-      <div className='w-full h-4 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500' />
+      <div className='w-full h-2 md:h-4 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500' />
       <div className='px-5 md:px-0'>
         <Header navItems={navItemsData} />
         <div className='max-w-2xl mx-auto'>{children}</div>
