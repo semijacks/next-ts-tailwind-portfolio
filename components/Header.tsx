@@ -15,7 +15,7 @@ const Header = ({ navItems }: HeaderProps) => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <nav className='py-4 md:flex justify-between items-center max-w-2xl w-full mb-4 mx-auto px-5 md:px-0'>
+    <nav className='py-4 md:flex justify-between items-center max-w-2xl w-full mb-4 mx-auto px-2 md:px-0'>
       <div className='hidden md:inline-block ml-[-0.60rem]'>
         {navItems.map((item) => (
           <NavItem key={item.route} href={`/${item.route}`} text={item.text} />
