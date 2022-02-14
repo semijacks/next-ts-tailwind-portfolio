@@ -38,7 +38,7 @@ export default function MobileMenu({ navItems }: MobileMenuProps) {
   return (
     <>
       <button
-        className={cn(styles.burger, 'visible md:hidden')}
+        className={cn(styles.burger, 'visible md:hidden px-7')}
         aria-label='Toggle menu'
         type='button'
         onClick={toggleMenu}
