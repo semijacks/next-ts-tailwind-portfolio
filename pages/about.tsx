@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Head from 'next/head';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
@@ -6,7 +6,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeHighlight from 'rehype-highlight';
-import { getMdxFromSlug, getSlugs, PostMeta } from '@utils/api';
+import { getMdxFromSlug, PostMeta } from '@utils/api';
 import YouTube from '@/components/YouTube';
 import 'highlight.js/styles/atom-one-dark.css';
 
