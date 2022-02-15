@@ -9,7 +9,7 @@ interface ContainerProps {
 
 const Container = ({ children }: ContainerProps) => {
   return (
-    <div className='bg-gray-50 dark:bg-gray-900'>
+    <div className='bg-gray-50 dark:bg-gray-900 min-h-screen'>
       <div className='w-full h-2 md:h-4 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500' />
       <div className='px-3 md:px-0'>
         <MobileMenu navItems={navItemsData} />
