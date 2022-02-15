@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import { navItemsData } from '@utils/data';
 import MobileMenu from '@/components/MobileMenu';
+import Footer from '@/components/Footer';
 
 interface ContainerProps {
   children: React.ReactNode;
@@ -16,6 +17,7 @@ const Container = ({ children }: ContainerProps) => {
         <Header navItems={navItemsData} />
       </div>
       <div className='max-w-2xl mx-auto'>{children}</div>
+      <Footer footerItems={navItemsData} />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import NextLink from 'next/link';
 import { useTheme } from 'next-themes';
 import NavItem from '@/components/NavItem';
-import { NavItemData } from '../utils/data';
+import { NavItemData } from '@utils/data';
 
 interface HeaderProps {
   navItems: NavItemData[];
