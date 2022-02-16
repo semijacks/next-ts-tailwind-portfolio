@@ -26,7 +26,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['IBM Plex Sans', ...fontFamily.sans],
+        sans: ['Change Calibre', ...fontFamily.sans],
       },
       typography: (theme) => ({
         DEFAULT: {

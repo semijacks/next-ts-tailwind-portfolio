@@ -43,26 +43,26 @@ export default function Footer({ footerItems }: FooterProps) {
           <ExternalLink href='https://twitter.com/semiloreId'>
             <FontAwesomeIcon
               icon={faTwitter}
-              className='hidden md:inline-block'
+              className='hidden md:inline-block mb-[1.5px]'
             />
             Twitter
-            <FontAwesomeIcon icon={faTwitter} className='md:hidden' />
+            <FontAwesomeIcon icon={faTwitter} className='md:hidden mb-[2px]' />
           </ExternalLink>
           <ExternalLink href='https://github.com/semijacks'>
             <FontAwesomeIcon
               icon={faGithub}
-              className='hidden md:inline-block'
+              className='hidden md:inline-block mb-[1.5px]'
             />
             GitHub
-            <FontAwesomeIcon icon={faGithub} className='md:hidden' />
+            <FontAwesomeIcon icon={faGithub} className='md:hidden mb-[2px]' />
           </ExternalLink>
           <ExternalLink href='https://www.linkedin.com/in/semijacks/'>
             <FontAwesomeIcon
               icon={faLinkedin}
-              className='hidden md:inline-block'
+              className='hidden md:inline-block mb-[1.5px]'
             />
             LinkedIn
-            <FontAwesomeIcon icon={faLinkedin} className='md:hidden' />
+            <FontAwesomeIcon icon={faLinkedin} className='md:hidden mb-[2px]' />
           </ExternalLink>
         </div>
         <div className='flex flex-col space-y-4'>
