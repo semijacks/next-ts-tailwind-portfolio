@@ -20,7 +20,7 @@ export default function ContentCard({
   return (
     <Link href={`/${type}/${slug}`}>
       <a>
-        <h4 className='text-lg md:text-lg font-medium mb-3 sm:mb-3 w-full text-gray-900 dark:text-gray-100 tracking-tight'>
+        <h4 className='text-lg md:text-2xl font-semibold mb-3 sm:mb-3 w-full text-gray-900 dark:text-gray-100 tracking-tight'>
           {title}
         </h4>
         <p className='mb-2 text-gray-700 dark:text-gray-200'>{excerpt}</p>
