@@ -1,8 +1,10 @@
 import type { PostMeta } from '@utils/api';
 import ContentCard from './Card';
+
+type ArticleType = 'blog' | 'portfolio';
 interface ArticlesProps {
   mdxFiles: PostMeta[];
-  type: string;
+  type: ArticleType;
   withTags: boolean;
 }
 
@@ -20,7 +22,7 @@ export default function Articles({ mdxFiles, type, withTags }: ArticlesProps) {
       {mdxFiles.length ? (
         mdxFiles.map((mdxFile) => (
           <div
-            className='mb-10 border-4 rounded-xl p-5 border-gray-200'
+            className='mb-10 border-4 rounded-xl p-5 border-gray-200 bg-gradient-to-r'
             key={mdxFile.slug}
           >
             <ContentCard
@@ -28,6 +30,7 @@ export default function Articles({ mdxFiles, type, withTags }: ArticlesProps) {
               slug={mdxFile.slug}
               tags={mdxFile.tags}
               title={mdxFile.title}
+              date={mdxFile.date}
               withTags={withTags}
               type={type}
             />

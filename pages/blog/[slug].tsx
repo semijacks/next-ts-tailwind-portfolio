@@ -9,6 +9,7 @@ import rehypeHighlight from 'rehype-highlight';
 import { getMdxFromSlug, getSlugs, PostMeta } from '@utils/api';
 import YouTube from '@/components/YouTube';
 import 'highlight.js/styles/atom-one-dark.css';
+import { convertDate } from '@utils/functions';
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -16,15 +17,29 @@ interface MDXPost {
 }
 
 export default function PostPage({ post }: { post: MDXPost }) {
+  const { title, date } = post.meta;
   return (
     <>
       <Head>
-        <title>{`Blog - ${post.meta.title}`}</title>
+        <title>{`Blog - ${title}`}</title>
       </Head>
       <div className='px-5 md:px-0'>
         <h1 className='mb-10 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white'>
-          {post.meta.title}
+          {title}
         </h1>
+        <div className='mb-10 flex items-center gap-x-1'>
+          <div className='flex items-center gap-x-2'>
+            <Image
+              alt='Semilore Idowu'
+              height={25}
+              width={25}
+              src='/images/avatar.jpg'
+              className='rounded-full filter grayscale'
+            />
+            <p className='text-sm'>Semilore Idowu /</p>
+          </div>
+          <p className='text-sm'>{convertDate(date)}</p>
+        </div>
         <article className='prose dark:prose-dark mb-20'>
           <MDXRemote {...post.source} components={{ YouTube, Image }} />
         </article>
