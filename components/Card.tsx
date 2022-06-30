@@ -27,9 +27,11 @@ export default function ContentCard({
           {title}
         </h4>
         <p className='mb-4 text-gray-700 dark:text-gray-200'>{excerpt}</p>
-        <p className='mb-2 text-gray-700 dark:text-gray-200 text-sm'>
-          {convertDate(date)}
-        </p>
+        {type === 'blog' && (
+          <p className='mb-2 text-gray-700 dark:text-gray-200 text-sm'>
+            {convertDate(date)}
+          </p>
+        )}
         <div className='flex flex-wrap gap-x-3 gap-y-3'>
           {withTags
             ? tags.map((tag) => (

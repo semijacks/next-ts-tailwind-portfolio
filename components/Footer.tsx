@@ -1,15 +1,5 @@
 import Link from 'next/link';
 import { NavItemData } from '@utils/data';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
-
-library.add(faGithub, faLinkedin, faTwitter);
-
 interface FooterProps {
   footerItems: NavItemData[];
 }
@@ -41,28 +31,13 @@ export default function Footer({ footerItems }: FooterProps) {
         </div>
         <div className='flex flex-col space-y-4'>
           <ExternalLink href='https://twitter.com/semiloreId'>
-            <FontAwesomeIcon
-              icon={faTwitter}
-              className='hidden md:inline-block mb-[1.5px]'
-            />
             Twitter
-            <FontAwesomeIcon icon={faTwitter} className='md:hidden mb-[2px]' />
           </ExternalLink>
           <ExternalLink href='https://github.com/semijacks'>
-            <FontAwesomeIcon
-              icon={faGithub}
-              className='hidden md:inline-block mb-[1.5px]'
-            />
             GitHub
-            <FontAwesomeIcon icon={faGithub} className='md:hidden mb-[2px]' />
           </ExternalLink>
           <ExternalLink href='https://www.linkedin.com/in/semijacks/'>
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className='hidden md:inline-block mb-[1.5px]'
-            />
             LinkedIn
-            <FontAwesomeIcon icon={faLinkedin} className='md:hidden mb-[2px]' />
           </ExternalLink>
         </div>
         <div className='flex flex-col space-y-4'>

@@ -22,7 +22,7 @@ export default function Articles({ mdxFiles, type, withTags }: ArticlesProps) {
       {mdxFiles.length ? (
         mdxFiles.map((mdxFile) => (
           <div
-            className='mb-10 border-4 rounded-xl p-5 border-gray-200 bg-gradient-to-r'
+            className='mb-10 border-4 rounded-xl p-5 border-gray-200 transform hover:scale-[1.01] transition-all'
             key={mdxFile.slug}
           >
             <ContentCard
